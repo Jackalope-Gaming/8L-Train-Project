@@ -82,3 +82,20 @@
 		data.raw["cargo-wagon"]["armoured-cargo-wagon"].pictures.scale = 1.095
 		data.raw["cargo-wagon"]["armoured-cargo-wagon"].pictures.shift = {0.8, -0.55}
 	end
+	
+--More Locomotive's locomotives
+	if data.raw["locomotive"]["cargo-locomotive"] then
+		data.raw["locomotive"]["cargo-locomotive"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
+		data.raw["locomotive"]["cargo-locomotive"].selection_box = {{-1, -4.5}, {1, 3}}
+		data.raw["locomotive"]["cargo-locomotive"].connection_distance = 3.4
+		data.raw["locomotive"]["cargo-locomotive"].joint_distance = 4.6
+		data.raw["locomotive"]["cargo-locomotive"].pictures.shift = {1.0, -0.5}
+	end
+	
+	if data.raw["locomotive"]["hs-locomotive"] then
+		data.raw["locomotive"]["hs-locomotive"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
+		data.raw["locomotive"]["hs-locomotive"].selection_box = {{-1, -4.5}, {1, 3}}
+		data.raw["locomotive"]["hs-locomotive"].connection_distance = 3.4
+		data.raw["locomotive"]["hs-locomotive"].joint_distance = 4.6
+		data.raw["locomotive"]["hs-locomotive"].pictures.shift = {1.0, -0.5}
+	end
