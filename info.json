@@ -5,5 +5,5 @@
        "author": "Jackielope, GotLag, Trev_lite",
        "homepage": "https://github.com/Jackalope-Gaming/8L-Train-Project",
        "description": "Increases train length slightly to make locomotives and wagons fit neatly on the grid.",
-       "dependencies": ["base >= 0.12.00", "? FARL >= 0.5.0", "? RailTanker >= 1.1.3", "? boblogistics >= 0.12.0"]
+       "dependencies": ["base >= 0.12.00", "? FARL >= 0.4.0", "? RailTanker >= 1.1.3", "? boblogistics >= 0.12.0"]
     }
