@@ -1,101 +1,76 @@
--- Base game cargo wagon and diesel locomotive
-		data.raw["cargo-wagon"]["cargo-wagon"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
-		data.raw["cargo-wagon"]["cargo-wagon"].selection_box = {{-1, -4.5}, {1, 3}}
-		data.raw["cargo-wagon"]["cargo-wagon"].connection_distance = 3.4
-		data.raw["cargo-wagon"]["cargo-wagon"].joint_distance = 4.6
-		data.raw["cargo-wagon"]["cargo-wagon"].pictures.scale = 1.095
-		data.raw["cargo-wagon"]["cargo-wagon"].pictures.shift = {0.8, -0.55}
+supported_wagons = {
+    -- base game
+    "cargo_wagon",
 
-		data.raw["locomotive"]["diesel-locomotive"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
-		data.raw["locomotive"]["diesel-locomotive"].selection_box = {{-1, -4.5}, {1, 3}}
-		data.raw["locomotive"]["diesel-locomotive"].connection_distance = 3.4
-		data.raw["locomotive"]["diesel-locomotive"].joint_distance = 4.6
-		data.raw["locomotive"]["diesel-locomotive"].pictures.shift = {1.0, -0.5}
+    -- rail tanker
+    "rail-tanker",
 
---FARL's FARL locomotive
-	if data.raw["locomotive"]["farl"] then
-		data.raw["locomotive"]["farl"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
-		data.raw["locomotive"]["farl"].selection_box = {{-1, -4.5}, {1, 3}}
-		data.raw["locomotive"]["farl"].connection_distance = 3.4
-		data.raw["locomotive"]["farl"].joint_distance = 4.6
-		data.raw["locomotive"]["farl"].pictures.shift = {1.0, -0.5}
-	end
-	
---RailTanker's rail tanker cargo wagon
-    if data.raw["cargo-wagon"]["rail-tanker"] then
-		data.raw["cargo-wagon"]["rail-tanker"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
-		data.raw["cargo-wagon"]["rail-tanker"].selection_box = {{-1, -4.5}, {1, 3}}
-		data.raw["cargo-wagon"]["rail-tanker"].connection_distance = 3.4
-		data.raw["cargo-wagon"]["rail-tanker"].joint_distance = 4.6
-		data.raw["cargo-wagon"]["rail-tanker"].pictures.scale = 1.08
-		data.raw["cargo-wagon"]["rail-tanker"].pictures.shift = {2, -0.60}
+    -- bobs mods
+    "cargo-wagon-2",
+    "cargo-wagon-3",
+    "armoured-cargo-wagon",
+}
+
+supported_locos = {
+    -- base game
+    "diesel-locomotive",
+
+    -- FARL
+    "farl",
+
+    -- bob's mods
+    "diesel-locomotive-2",
+    "diesel-locomotive-3",
+    "armoured-diesel-locomotive",
+
+    -- more locomotives
+    "cargo-locomotive",
+    "hs-locomotive",
+
+    -- color-coding colored locos
+    "diesel-locomotive-red",
+    "diesel-locomotive-orange",
+    "diesel-locomotive-yellow",
+    "diesel-locomotive-green",
+    "diesel-locomotive-cyan",
+    "diesel-locomotive-blue",
+    "diesel-locomotive-purple",
+    "diesel-locomotive-magenta",
+    "diesel-locomotive-white",
+    "diesel-locomotive-black",
+}
+
+
+-- reconfigure all supported cargo wagons for 8L size
+for i,name in ipairs(supported_wagons) do
+    if  data.raw["cargo-wagon"][name] then
+        data.raw["cargo-wagon"][name].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
+        data.raw["cargo-wagon"][name].selection_box = {{-1, -4.5}, {1, 3}}
+        data.raw["cargo-wagon"][name].connection_distance = 3.4
+        data.raw["cargo-wagon"][name].joint_distance = 4.6
+        data.raw["cargo-wagon"][name].pictures.scale = 1.095
+        data.raw["cargo-wagon"][name].pictures.shift = {0.8, -0.55}
+        if name == "rail-tanker" then
+            -- picture scale and shift need to be overridden with these values for rail tanker
+            data.raw["cargo-wagon"][name].pictures.scale = 1.08
+            data.raw["cargo-wagon"][name].pictures.shift = {2, -0.60}
+        end
     end
-	
---Bob's Mods' locomotives and wagons
-	if data.raw["locomotive"]["diesel-locomotive-2"] then
-		data.raw["locomotive"]["diesel-locomotive-2"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
-		data.raw["locomotive"]["diesel-locomotive-2"].selection_box = {{-1, -4.5}, {1, 3}}
-		data.raw["locomotive"]["diesel-locomotive-2"].connection_distance = 3.4
-		data.raw["locomotive"]["diesel-locomotive-2"].joint_distance = 4.6
-		data.raw["locomotive"]["diesel-locomotive-2"].pictures.shift = {1.0, -0.5}
-	end
-	
-	if data.raw["locomotive"]["diesel-locomotive-3"] then
-		data.raw["locomotive"]["diesel-locomotive-3"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
-		data.raw["locomotive"]["diesel-locomotive-3"].selection_box = {{-1, -4.5}, {1, 3}}
-		data.raw["locomotive"]["diesel-locomotive-3"].connection_distance = 3.4
-		data.raw["locomotive"]["diesel-locomotive-3"].joint_distance = 4.6
-		data.raw["locomotive"]["diesel-locomotive-3"].pictures.shift = {1.0, -0.5}
-	end
-	
-	if data.raw["locomotive"]["armoured-diesel-locomotive"] then
-		data.raw["locomotive"]["armoured-diesel-locomotive"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
-		data.raw["locomotive"]["armoured-diesel-locomotive"].selection_box = {{-1, -4.5}, {1, 3}}
-		data.raw["locomotive"]["armoured-diesel-locomotive"].connection_distance = 3.4
-		data.raw["locomotive"]["armoured-diesel-locomotive"].joint_distance = 4.6
-		data.raw["locomotive"]["armoured-diesel-locomotive"].pictures.shift = {1.0, -0.5}
-	end
-	
-	if data.raw["cargo-wagon"]["cargo-wagon-2"] then
-		data.raw["cargo-wagon"]["cargo-wagon-2"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
-		data.raw["cargo-wagon"]["cargo-wagon-2"].selection_box = {{-1, -4.5}, {1, 3}}
-		data.raw["cargo-wagon"]["cargo-wagon-2"].connection_distance = 3.4
-		data.raw["cargo-wagon"]["cargo-wagon-2"].joint_distance = 4.6
-		data.raw["cargo-wagon"]["cargo-wagon-2"].pictures.scale = 1.095
-		data.raw["cargo-wagon"]["cargo-wagon-2"].pictures.shift = {0.8, -0.55}
-	end
-	
-	if data.raw["cargo-wagon"]["cargo-wagon-3"] then
-		data.raw["cargo-wagon"]["cargo-wagon-3"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
-		data.raw["cargo-wagon"]["cargo-wagon-3"].selection_box = {{-1, -4.5}, {1, 3}}
-		data.raw["cargo-wagon"]["cargo-wagon-3"].connection_distance = 3.4
-		data.raw["cargo-wagon"]["cargo-wagon-3"].joint_distance = 4.6
-		data.raw["cargo-wagon"]["cargo-wagon-3"].pictures.scale = 1.095
-		data.raw["cargo-wagon"]["cargo-wagon-3"].pictures.shift = {0.8, -0.55}
-	end
-	
-	if data.raw["cargo-wagon"]["armoured-cargo-wagon"] then
-		data.raw["cargo-wagon"]["armoured-cargo-wagon"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
-		data.raw["cargo-wagon"]["armoured-cargo-wagon"].selection_box = {{-1, -4.5}, {1, 3}}
-		data.raw["cargo-wagon"]["armoured-cargo-wagon"].connection_distance = 3.4
-		data.raw["cargo-wagon"]["armoured-cargo-wagon"].joint_distance = 4.6
-		data.raw["cargo-wagon"]["armoured-cargo-wagon"].pictures.scale = 1.095
-		data.raw["cargo-wagon"]["armoured-cargo-wagon"].pictures.shift = {0.8, -0.55}
-	end
-	
---More Locomotive's locomotives
-	if data.raw["locomotive"]["cargo-locomotive"] then
-		data.raw["locomotive"]["cargo-locomotive"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
-		data.raw["locomotive"]["cargo-locomotive"].selection_box = {{-1, -4.5}, {1, 3}}
-		data.raw["locomotive"]["cargo-locomotive"].connection_distance = 3.4
-		data.raw["locomotive"]["cargo-locomotive"].joint_distance = 4.6
-		data.raw["locomotive"]["cargo-locomotive"].pictures.shift = {1.0, -0.5}
-	end
-	
-	if data.raw["locomotive"]["hs-locomotive"] then
-		data.raw["locomotive"]["hs-locomotive"].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
-		data.raw["locomotive"]["hs-locomotive"].selection_box = {{-1, -4.5}, {1, 3}}
-		data.raw["locomotive"]["hs-locomotive"].connection_distance = 3.4
-		data.raw["locomotive"]["hs-locomotive"].joint_distance = 4.6
-		data.raw["locomotive"]["hs-locomotive"].pictures.shift = {1.0, -0.5}
-	end
+end
+
+-- reconfigure all supported locos for 8L size
+for i,name in ipairs(supported_locos) do
+    if  data.raw["locomotive"][name] then
+        data.raw["locomotive"][name].collision_box = {{-0.6, -2.6}, {0.6, 2.6}}
+        data.raw["locomotive"][name].selection_box = {{-1, -4.5}, {1, 3}}
+        data.raw["locomotive"][name].connection_distance = 3.4
+        data.raw["locomotive"][name].joint_distance = 4.6
+        data.raw["locomotive"][name].pictures.shift = {1.0, -0.5}
+        if name == "cargo-wagon-2"
+        or name == "cargo-wagon-3"
+        or name == "armoured-cargo-wagon" then
+            -- picture shift needs to be overridden with this value for bob's mods
+            data.raw["locomotive"][name].pictures.shift = {0.8, -0.55}
+        end
+    end
+end
