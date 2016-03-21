@@ -66,11 +66,5 @@ for i,name in ipairs(supported_locos) do
         data.raw["locomotive"][name].connection_distance = 3.4
         data.raw["locomotive"][name].joint_distance = 4.6
         data.raw["locomotive"][name].pictures.shift = {1.0, -0.5}
-        if name == "cargo-wagon-2"
-        or name == "cargo-wagon-3"
-        or name == "armoured-cargo-wagon" then
-            -- picture shift needs to be overridden with this value for bob's mods
-            data.raw["locomotive"][name].pictures.shift = {0.8, -0.55}
-        end
     end
 end
