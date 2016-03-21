@@ -1,6 +1,6 @@
 supported_wagons = {
     -- base game
-    "cargo_wagon",
+    "cargo-wagon",
 
     -- rail tanker
     "rail-tanker",
@@ -49,11 +49,11 @@ for i,name in ipairs(supported_wagons) do
         data.raw["cargo-wagon"][name].connection_distance = 3.4
         data.raw["cargo-wagon"][name].joint_distance = 4.6
         data.raw["cargo-wagon"][name].pictures.scale = 1.095
-        data.raw["cargo-wagon"][name].pictures.shift = {0.8, -0.55}
+        data.raw["cargo-wagon"][name].pictures.shift = {0.735, -0.55}
         if name == "rail-tanker" then
             -- picture scale and shift need to be overridden with these values for rail tanker
             data.raw["cargo-wagon"][name].pictures.scale = 1.08
-            data.raw["cargo-wagon"][name].pictures.shift = {2, -0.60}
+            data.raw["cargo-wagon"][name].pictures.shift = {2.05, -0.60}
         end
     end
 end
@@ -65,6 +65,6 @@ for i,name in ipairs(supported_locos) do
         data.raw["locomotive"][name].selection_box = {{-1, -4.5}, {1, 3}}
         data.raw["locomotive"][name].connection_distance = 3.4
         data.raw["locomotive"][name].joint_distance = 4.6
-        data.raw["locomotive"][name].pictures.shift = {1.0, -0.5}
+        data.raw["locomotive"][name].pictures.shift = {1.0, -0.51}
     end
 end
