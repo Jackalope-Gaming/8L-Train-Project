@@ -44,7 +44,7 @@ supported_locos = {
 -- reconfigure all supported cargo wagons for 8L size
 for i,name in ipairs(supported_wagons) do
     if  data.raw["cargo-wagon"][name] then
-        data.raw["cargo-wagon"][name].collision_box = {{-0.6, -2.7}, {0.6, 2.7}}
+        data.raw["cargo-wagon"][name].collision_box = {{-0.6, -2.75}, {0.6, 2.75}}
         data.raw["cargo-wagon"][name].selection_box = {{-1, -4.5}, {1, 3}}
         data.raw["cargo-wagon"][name].connection_distance = 3
         data.raw["cargo-wagon"][name].joint_distance = 5
@@ -61,10 +61,10 @@ end
 -- reconfigure all supported locos for 8L size
 for i,name in ipairs(supported_locos) do
     if  data.raw["locomotive"][name] then
-        data.raw["locomotive"][name].collision_box = {{-0.6, -2.7}, {0.6, 2.7}}
+        data.raw["locomotive"][name].collision_box = {{-0.6, -2.75}, {0.6, 2.75}}
         data.raw["locomotive"][name].selection_box = {{-1, -4.5}, {1, 3}}
-        data.raw["locomotive"][name].connection_distance = 3
-        data.raw["locomotive"][name].joint_distance = 5
+        data.raw["locomotive"][name].connection_distance = 2.9
+        data.raw["locomotive"][name].joint_distance = 5.1
         data.raw["locomotive"][name].pictures.shift = {1.0, -0.51}
     end
 end
