@@ -46,6 +46,9 @@ supported_locos = {
 	-- Factorio Extended locos
 	"diesel-locomotive-mk2",
 	"diesel-locomotive-mk3",
+	
+	-- ShuttleTrain's loco
+	"shuttleTrain",
 }
 
 
